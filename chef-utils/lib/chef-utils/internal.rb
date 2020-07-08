@@ -72,6 +72,16 @@ module ChefUtils
       nil
     end
 
+    # @api private
+    def __config
+      raise NotImplementedError
+    end
+
+    # @api private
+    def __log
+      raise NotImplementedError
+    end
+
     extend self
   end
 end

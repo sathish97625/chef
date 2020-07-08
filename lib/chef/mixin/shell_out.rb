@@ -16,11 +16,23 @@
 # limitations under the License.
 
 require "chef-utils/dsl/shell_out" unless defined?(ChefUtils::DSL::ShellOut)
+require_relative "../log"
 
 class Chef
   module Mixin
     module ShellOut
       include ChefUtils::DSL::ShellOut
+
+      def __config
+        Chef::Config
+      end
+
+      def __log
+        Chef::Log
+      end
     end
   end
 end
+
+# FIXME: kill this circular dep with fire now
+require_relative "../config"

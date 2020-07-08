@@ -151,14 +151,6 @@ module ChefUtils
         args.flatten.compact.map(&:to_s)
       end
 
-      def __config
-        Chef::Config
-      end
-
-      def __log
-        Chef::Log
-      end
-
       def __shell_out_command(*args, **options)
         if __config.target_mode?
           FakeShellOut.new(args, options, __transport_connection.run_command(args.join(" "))) # FIXME: train should accept run_command(*args)
@@ -213,7 +205,3 @@ module ChefUtils
     end
   end
 end
-
-# Break circular dep
-require "chef-config"
-# require_relative "../config"
