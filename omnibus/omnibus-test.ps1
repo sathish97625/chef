@@ -94,5 +94,5 @@ If ($lastexitcode -ne 0) { Exit $lastexitcode }
 # FIXME: we need to add back unit and integration tests here.  we have no coverage of those on e.g. AIX
 #
 # chocolatey functional tests fail so disable that tag directly <-- and this is a bug that needs fixing.
-bundle exec rspec -r rspec_junit_formatter -f RspecJunitFormatter -o test.xml -f documentation --tag ~choco_installed spec/functional
+bundle exec rspec -r rspec_junit_formatter -f RspecJunitFormatter -o test.xml -f documentation --tag ~choco_installed
 If ($lastexitcode -ne 0) { Exit $lastexitcode }
