@@ -17,6 +17,7 @@
 
 require "chef-utils/dsl/shell_out" unless defined?(ChefUtils::DSL::ShellOut)
 require_relative "../log"
+require_relative "../config"
 
 class Chef
   module Mixin
@@ -33,6 +34,3 @@ class Chef
     end
   end
 end
-
-# FIXME: kill this circular dep with fire now
-require_relative "../config"
