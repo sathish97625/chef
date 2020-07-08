@@ -96,7 +96,7 @@ module ChefUtils
             "LC_ALL" => __config[:internal_locale],
             "LANGUAGE" => __config[:internal_locale],
             "LANG" => __config[:internal_locale],
-            __env_path => ChefUtils::DSL::PathSanity.sanitized_path,
+            __env_path_name => ChefUtils::DSL::PathSanity.sanitized_path,
           }.update(options[env_key] || {})
         end
         options
@@ -174,7 +174,7 @@ module ChefUtils
         end
       end
 
-      def __env_path
+      def __env_path_name
         if ChefUtils.windows?
           "Path"
         else
